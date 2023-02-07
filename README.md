@@ -20,4 +20,4 @@
 
 ## How to use
 
-: `cd reactEXA``yarn install``yarn start`
+: `cd reactEXA` `yarn install` `yarn start`

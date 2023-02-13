@@ -17,3 +17,7 @@
 - 이 웹사이트를 사용하기 위한 membership 구성(NFT로 할 예정)
 
 # EXA
+
+## How to use
+
+: `cd arbitrage` `yarn install` `yarn start`

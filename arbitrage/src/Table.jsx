@@ -15,23 +15,23 @@ function Table({ columns, data }) {
   return (
     <>
       <Search onSubmit={setGlobalFilter} />
-      <table {...getTableProps()}>
-        <thead>
+      <table className = "arbitrage" {...getTableProps()}>
+        <thead className = "t-head">
           {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
+            <tr className="t-row" {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                <th className="t-header" {...column.getHeaderProps()}>{column.render("Header")}</th>
               ))}
-            </tr>
+            </tr >
           ))}
         </thead>
-        <tbody {...getTableBodyProps()}>
+        <tbody className="t-body" {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+              <tr className="t-row" {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  <td className="t-data" {...cell.getCellProps()}>{cell.render("Cell")}</td>
                 ))}
               </tr>
             );

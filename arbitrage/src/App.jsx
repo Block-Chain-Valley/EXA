@@ -1,5 +1,6 @@
 import Table from "./Table";
 import dummy from "./data.json"
+import styles from "./App.css"
 
 function App() {
   const columns = [

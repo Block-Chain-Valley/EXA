@@ -193,6 +193,10 @@ exports.getCEX = async (req,res,next) => {
 exports.getDEX = async (req, res, next) => {
   const tokens = await Token.find(); //649개
   const total = tokens.length //649
+  const start_index = 0;
+  const end_index = Math.floor(total/2);
+  tokens = tokens.slice(start_index,end_index);
+  
   console.log("starting getDEX", total);
   let cnt = 0;
   let timeInterval = 5000;
@@ -273,6 +277,7 @@ exports.getArbitrage = async (req,res,next) => {
     console.log('executing getArbitrage');
 
     const standard_percentage = 5;
+
     // const interval_time = 60000;
 
     // const interval = setInterval(async () => {

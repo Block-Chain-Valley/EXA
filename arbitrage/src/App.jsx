@@ -1,8 +1,12 @@
 import Table from "./Table";
 import dummy from "./data.json"
 import styles from "./App.css"
+import logo from "./img/EXA.png"
+import SerCon from "./SerCon";
+import Navbar from './Navbar';
 
 function App() {
+  
   const columns = [
     {
       accessor: "rank",
@@ -51,7 +55,14 @@ function App() {
     })
   })
 
-  return <><Table columns={columns} data={data} /></>;
+  return (
+    <div>
+    <Navbar />
+    <SerCon />
+    <Table columns={columns} data={data} />
+   </div>
+  );
 }
+
 
 export default App;

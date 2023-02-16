@@ -14,7 +14,7 @@ function Table({ columns, data }) {
 
   return (
     <>
-      <Search onSubmit={setGlobalFilter} />
+    
       <table className = "arbitrage" {...getTableProps()}>
         <thead className = "t-head">
           {headerGroups.map((headerGroup) => (

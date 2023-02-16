@@ -30,23 +30,46 @@ body {
 
 .search{
   background-color: #FFFFFF;
+
+}
+
+.logo {
+  width: 300px;
+  height: 160px;
 }
 
 .searchform{
   display: flex;
   align-items: center;
+  width : 500px;
 }
 
 .searchbutton{
-  margin-left: 5px;
-  padding: 8px 15px;
-	font-size: 16px;
-	color: #FFF;
-	background: #474747;
-	border: 5px solid #474747;
-	border-radius: 30%;
+  width: 90px;
+  margin-left: 3px;
+  font-size: 12px;
+  padding: 4px 8px;
+	color: black;
+	background: white;
+	border: 3px solid black;
+	border-radius: 10%;
 	cursor: pointer;
+  
 }
+
+.searchbutton:hover {
+  background-color: rgb(8, 44, 203);
+  color : white;
+}
+
+.ser-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom : 40px;
+}
+
 
 .searchinput{
   width: 500px;

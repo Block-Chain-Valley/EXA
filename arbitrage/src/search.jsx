@@ -8,8 +8,10 @@ function Search({ onSubmit }) {
 
   return (
     <form className="searchform" onSubmit={handleSubmit}>
-      <input className = "searchinput" name="filter" />
-      <button className="searchbutton" type="submit"></button>
+      <input type="text" placeholder="Enter the token..." className = "searchinput" name="filter" />
+      <button className="searchbutton" type="submit">
+      <span style={{ fontWeight: "bold" }}>검색하기</span>
+      </button>
     </form>
   );
 }

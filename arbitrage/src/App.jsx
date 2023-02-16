@@ -7,6 +7,15 @@ import Navbar from './Navbar';
 
 function App() {
   
+  fetch("https://0e29-203-229-173-93.jp.ngrok.io/getArbitrage", {
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json',
+    },
+})
+.then(response => response.json())
+.then(response => console.log(JSON.stringify(response)))
+
   const columns = [
     {
       accessor: "rank",

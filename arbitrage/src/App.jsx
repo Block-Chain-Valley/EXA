@@ -1,20 +1,45 @@
+import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 import Table from "./Table";
-import dummy from "./data.json"
-import styles from "./App.css"
-import logo from "./img/EXA.png"
 import SerCon from "./SerCon";
 import Navbar from './Navbar';
 
+const url = 'http://3.39.64.74:8000/getArbitrage' //백엔드 API 서버 주소
+const delay = 20000; //호출 간격
+
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      savedCallback.current();
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
+
 function App() {
-  
-  fetch("https://0e29-203-229-173-93.jp.ngrok.io/getArbitrage", {
-    method: 'GET',
-    headers: {
-        'Accept': 'application/json',
-    },
-})
-.then(response => response.json())
-.then(response => console.log(JSON.stringify(response)))
+
+  const [dummy, setUsers] = useState([]);
+
+  useInterval(() => {
+    axios.get(url)
+      .then(response => {
+        setUsers(response.data);
+        console.log(dummy);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, delay);
+
 
   const columns = [
     {
@@ -46,7 +71,7 @@ function App() {
   const data = []
   dummy.forEach(function (v, i) {
     data.push({
-      "rank":i+1,
+      "rank": i + 1,
       //percentage
       "percentage": dummy[i].percentage,
       //high
@@ -66,10 +91,10 @@ function App() {
 
   return (
     <div>
-    <Navbar />
-    <SerCon />
-    <Table columns={columns} data={data} />
-   </div>
+      <Navbar />
+      <SerCon />
+      <Table columns={columns} data={data} />
+    </div>
   );
 }
 

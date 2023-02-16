@@ -14,24 +14,24 @@ function Table({ columns, data }) {
 
   return (
     <>
-    
-      <table className = "arbitrage" {...getTableProps()}>
-        <thead className = "t-head">
+      <Search onSubmit={setGlobalFilter} />
+      <table {...getTableProps()}>
+        <thead>
           {headerGroups.map((headerGroup) => (
-            <tr className="t-row" {...headerGroup.getHeaderGroupProps()}>
+            <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th className="t-header" {...column.getHeaderProps()}>{column.render("Header")}</th>
+                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
               ))}
-            </tr >
+            </tr>
           ))}
         </thead>
-        <tbody className="t-body" {...getTableBodyProps()}>
+        <tbody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr className="t-row" {...row.getRowProps()}>
+              <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <td className="t-data" {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                 ))}
               </tr>
             );

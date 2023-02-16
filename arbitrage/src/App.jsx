@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Table from "./Table";
-import SerCon from "./SerCon";
 import Navbar from './Navbar';
 
 const url = 'http://3.39.64.74:8000/getArbitrage' //백엔드 API 서버 주소
-const delay = 20000; //호출 간격
+const delay = 30000; //호출 간격
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -92,8 +91,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <SerCon />
-      <Table columns={columns} data={data} />
+      <Table columns={columns} data={data}/>
     </div>
   );
 }

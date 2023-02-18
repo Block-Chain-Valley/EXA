@@ -65,6 +65,10 @@ function App() {
       accessor: "ChainID",
       Header: "ChainID",
     },
+    {
+      accessor: "PairAddress",
+      Header: "PairAddress",
+    },
   ];
 
   const data = []
@@ -78,6 +82,7 @@ function App() {
       "PriceUSD": dummy[i].high.priceUsd,
       "DexID": dummy[i].high.dexId,
       "ChainID": dummy[i].high.chainId,
+      "PairAddress": dummy[i].high.PairAddress,
     })
     data.push({
       //low
@@ -85,6 +90,7 @@ function App() {
       "PriceUSD": dummy[i].low.priceUsd,
       "DexID": dummy[i].low.dexId,
       "ChainID": dummy[i].low.chainId,
+      "PairAddress": dummy[i].low.PairAddress,
     })
   })
 
